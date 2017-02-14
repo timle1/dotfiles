@@ -53,9 +53,9 @@ DEFAULT_USER="tenacity"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
-plugins=(git repo debian colorize colored-man-pages command-not-found compleat extract docker vagrant redis-cli postgres celery django pip python virtualenv)
+plugins=(git repo debian colorize colored-man-pages command-not-found compleat extract docker vagrant redis-cli postgres celery django pip python virtualenv tmux)
 
-#  tmux ssh-agent
+# ssh-agent
 
 source $ZSH/oh-my-zsh.sh
 
