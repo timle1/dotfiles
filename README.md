@@ -1,9 +1,13 @@
 # READ ME
 
-Purpose:
+## Purpose:
+
 Store and load dotfiles
 
-How:
+---
+
+## Instructions:
+
 ```bash
 git clone git@github.com:timle1/dotfiles.git
 cd ~/dotfiles
