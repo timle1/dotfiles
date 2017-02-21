@@ -38,9 +38,9 @@
 #keystate_scrolllock= enable
 
 # Examples of commands:
-
+# Add Alt to avoid conflict with gnome-terminal
 "xbindkeys_show" 
-  control+shift + q
+  control+shift+alt + q
 
 # set directly keycode (here control + f with my keyboard)
 #"xterm"
@@ -74,6 +74,12 @@
 # Paste
 "xte 'keydown Control_L' 'key v' 'keyup Control_L'"
    b:9
+# Copy, shift for terminal
+"xte 'keydown Control_L' 'keydown Shift_L' 'key c' 'keyup Control_L' 'keyup Shift_L'"
+   shift + b:8
+# Paste, shift for terminal
+"xte 'keydown Control_L' 'keydown Shift_L' 'key v' 'keyup Control_L' 'keyup Shift_L'"
+   shift + b:9
 
 ##################################
 # End of xbindkeys configuration #

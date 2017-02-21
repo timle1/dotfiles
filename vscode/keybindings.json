@@ -1,0 +1,35 @@
+// Place your key bindings in this file to overwrite the defaults
+// ~/.config/Code/User/
+// or File> Preferences> Keyboard Shortcuts
+[
+    // Like tmux, change prefix to ctrl+e
+    { "key": "ctrl+e shift+5",  "command": "workbench.action.splitEditor" },
+    { "key": "ctrl+e x",        "command": "workbench.action.closeActiveEditor" },
+    { "key": "ctrl+e space",    "command": "workbench.action.toggleEditorGroupLayout" },
+    { "key": "ctrl+e o",        "command": "workbench.action.focusNextGroup" },
+    { "key": "ctrl+e shift+[",  "command": "workbench.action.moveActiveEditorGroupLeft" },
+    { "key": "ctrl+e shift+]",  "command": "workbench.action.moveActiveEditorGroupRight" },
+    { "key": "ctrl+e c",        "command": "workbench.action.newWindow" },
+    { "key": "ctrl+e shift+7",  "command": "workbench.action.closeWindow" },
+    { "key": "ctrl+e shift+/",  "command": "workbench.action.openGlobalKeybindings" },
+    { "key": "ctrl+e left",     "command": "workbench.action.focusPreviousGroup" },
+    { "key": "ctrl+e right",    "command": "workbench.action.focusNextGroup" },
+
+    // Left and right key too far from home row, use h and l instead
+    { "key": "ctrl+e h",    "command": "workbench.action.focusPreviousGroup" },
+    { "key": "ctrl+e l",    "command": "workbench.action.focusNextGroup" },
+
+    // Like down arrow in Shell history
+    { "key": "ctrl+n",  "command": "selectNextSuggestion",
+                            "when": "editorTextFocus && suggestWidgetVisible && !vim.useCtrlKeys" },
+    // Like up arrow in Shell history
+    { "key": "ctrl+p",  "command": "selectPrevSuggestion",
+                            "when": "editorTextFocus && suggestWidgetVisible && !vim.useCtrlKeys" },
+    // To ignore suggestion and esc key too far away
+    { "key": "ctrl+;",  "command": "cursorEnd",
+                            "when": "editorTextFocus" },
+    { "key": "ctrl+shift+g", "command": "editor.action.goToDeclaration",
+                            "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor" },
+    { "key": "ctrl+shift+r",  "command": "editor.action.rename",
+                            "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly" }
+]
