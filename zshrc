@@ -100,11 +100,12 @@ globalias() {
     zle _expand_alias
     zle expand-word
   fi
-  zle self-insert
+  # zle self-insert
+  zle magic-space
 }
 zle -N globalias
-bindkey " " globalias                 # space key to expand globalalias
-# bindkey "^ " magic-space            # control-space to bypass completion
+# bindkey "^ " globalias                 # space key to expand globalalias
+bindkey "^ " magic-space            # control-space to bypass completion
 bindkey "^[[Z" magic-space            # shift-tab to bypass completion
 bindkey -M isearch " " magic-space    # normal space during searches
 
@@ -141,16 +142,18 @@ ealiases+=(${1%%\=*})
 
 function expand-ealias()
 {
-if [[ $LBUFFER =~ "(^|[;|&])\s*(${(j:|:)ealiases})\$" ]]; then
-    zle _expand_alias
-    zle expand-word
-fi
-zle magic-space
+  if [[ $LBUFFER =~ "(^|[;|&])\s*(${(j:|:)ealiases})\$" ]]; then
+      zle _expand_alias
+      zle expand-word
+  fi
+  # zle magic-space
+
+  globalias
 }
 
 zle -N expand-ealias
 
-bindkey '^ ' expand-ealias #  -M viins
+bindkey ' ' expand-ealias #  -M viins
 # bindkey '^ '   magic-space     # control-space to bypass completion  -M viins
 # bindkey -M isearch " "  magic-space # normal space during searches
 
@@ -162,3 +165,8 @@ bindkey '^ ' expand-ealias #  -M viins
 # Example aliases
 ealias cfgzsh="code ~/.zshrc"
 ealias cfgomz="code ~/.oh-my-zsh"
+
+# some more ls aliases
+ealias ll='ls -alF'
+ealias la='ls -A'
+ealias l='ls -CF'
