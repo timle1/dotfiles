@@ -103,7 +103,7 @@ globalias() {
   zle self-insert
 }
 zle -N globalias
-bindkey "^ " globalias                 # space key to expand globalalias
+bindkey " " globalias                 # space key to expand globalalias
 # bindkey "^ " magic-space            # control-space to bypass completion
 bindkey "^[[Z" magic-space            # shift-tab to bypass completion
 bindkey -M isearch " " magic-space    # normal space during searches
@@ -150,7 +150,7 @@ zle magic-space
 
 zle -N expand-ealias
 
-bindkey ' ' expand-ealias #  -M viins
+bindkey '^ ' expand-ealias #  -M viins
 # bindkey '^ '   magic-space     # control-space to bypass completion  -M viins
 # bindkey -M isearch " "  magic-space # normal space during searches
 
