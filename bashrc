@@ -128,3 +128,10 @@ if [ -f `which powerline-daemon` ]; then
   . /home/tenacity/.local/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
 fi
 
+# fzf ^F search history
+fh() {
+eval $(history | fzf +s | sed 's/ *[0-9]* *//')
+}
+
+bind '"\C-F":"fh\n"' # fzf history
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
