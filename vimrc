@@ -1,4 +1,10 @@
 " For https://github.com/junegunn/vim-plug
+" manual install
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" :PlugInstall to install plugins
+
+" Automatic
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -26,6 +32,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-expand-region'
+Plug 'christoomey/vim-tmux-navigator'
 
 
 " Initialize plugin system
