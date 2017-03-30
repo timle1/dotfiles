@@ -2,22 +2,22 @@
 // ~/.config/Code/User/
 // or File> Preferences> Keyboard Shortcuts
 [
-    // Like tmux, change prefix to ctrl+e
-    { "key": "ctrl+e shift+5",  "command": "workbench.action.splitEditor" },
-    { "key": "ctrl+e x",        "command": "workbench.action.closeActiveEditor" },
-    { "key": "ctrl+e space",    "command": "workbench.action.toggleEditorGroupLayout" },
-    { "key": "ctrl+e o",        "command": "workbench.action.focusNextGroup" },
-    { "key": "ctrl+e shift+[",  "command": "workbench.action.moveActiveEditorGroupLeft" },
-    { "key": "ctrl+e shift+]",  "command": "workbench.action.moveActiveEditorGroupRight" },
-    { "key": "ctrl+e c",        "command": "workbench.action.newWindow" },
-    { "key": "ctrl+e shift+7",  "command": "workbench.action.closeWindow" },
-    { "key": "ctrl+e shift+/",  "command": "workbench.action.openGlobalKeybindings" },
-    { "key": "ctrl+e left",     "command": "workbench.action.focusPreviousGroup" },
-    { "key": "ctrl+e right",    "command": "workbench.action.focusNextGroup" },
+    // Like tmux, change prefix to ctrl+space
+    { "key": "ctrl+space shift+\\",  "command": "workbench.action.splitEditor" },
+    { "key": "ctrl+space x",        "command": "workbench.action.closeActiveEditor" },
+    { "key": "ctrl+space space",    "command": "workbench.action.toggleEditorGroupLayout" },
+    { "key": "ctrl+space o",        "command": "workbench.action.focusNextGroup" },
+    { "key": "ctrl+space shift+[",  "command": "workbench.action.moveActiveEditorGroupLeft" },
+    { "key": "ctrl+space shift+]",  "command": "workbench.action.moveActiveEditorGroupRight" },
+    { "key": "ctrl+space c",        "command": "workbench.action.newWindow" },
+    { "key": "ctrl+space shift+7",  "command": "workbench.action.closeWindow" },
+    { "key": "ctrl+space shift+/",  "command": "workbench.action.openGlobalKeybindings" },
+    { "key": "ctrl+space left",     "command": "workbench.action.focusPreviousGroup" },
+    { "key": "ctrl+space right",    "command": "workbench.action.focusNextGroup" },
 
     // Left and right key too far from home row, use h and l instead
-    { "key": "ctrl+e h",    "command": "workbench.action.focusPreviousGroup" },
-    { "key": "ctrl+e l",    "command": "workbench.action.focusNextGroup" },
+    { "key": "ctrl+space h",    "command": "workbench.action.focusPreviousGroup" },
+    { "key": "ctrl+space l",    "command": "workbench.action.focusNextGroup" },
 
     // Like down arrow in Shell history
     { "key": "ctrl+n",  "command": "selectNextSuggestion",
@@ -26,7 +26,7 @@
     { "key": "ctrl+p",  "command": "selectPrevSuggestion",
                             "when": "editorTextFocus && suggestWidgetVisible && !vim.useCtrlKeys" },
     // To ignore suggestion and esc key too far away
-    { "key": "ctrl+;",  "command": "cursorEnd",
+    { "key": "ctrl+e",  "command": "cursorEnd",
                             "when": "editorTextFocus" },
     { "key": "ctrl+shift+g", "command": "editor.action.goToDeclaration",
                             "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor" },
