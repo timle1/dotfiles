@@ -1,0 +1,29 @@
+session_name: defs          #tmuxp load ~/Documents/dotfiles/session.yaml
+windows:
+- window_name: zsh
+  focus: True
+  shell_command_before:
+    - pwd                    # run as a first command in all panes
+  panes:
+    - shell_command:           # pane no. 1
+        - ls $PWD          # run multiple commands in this pane
+        - echo 'Window 1'
+- window_name: notes
+  shell_command_before: cd $HOME/Documents/notes
+  layout: main-vertical
+  panes:
+  - shell_command:
+    - vim CLI/index.md
+    focus: true
+  - shell_command:
+    - cat CLI/vimBasic.md
+- window_name: tmux
+  layout: main-vertical
+  panes:
+  - shell_command:
+    - ls $PWD
+    - tmux ls
+    - echo 'aliases tm tma tmk tml'
+    focus: true
+  - shell_command:
+    - cat $HOME/Documents/notes/CLI/tmux.md

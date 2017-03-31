@@ -81,6 +81,47 @@
 "xte 'keydown Control_L' 'keydown Shift_L' 'key v' 'keyup Control_L' 'keyup Shift_L'"
    shift + b:9
 
+# reload xbindkeys
+# "xmodmap ~/.Xmodmap && killall xcape && xcape -e 'Hyper_L=Return' && killall xbindkeys && xbindkeys"
+"killall xbindkeys ; xbindkeys"
+  Control+Shift + u
+
+#-------- System {{{
+#------------------------------------------------------
+
+# search files
+# demo: https://www.youtube.com/watch?v=C64LKCZFzME
+# "gnome-terminal -fullscreen -fg white -bg black -fa 'Monospace' -fs 14 -e ranger --cmd=fzf_locate"
+#   Mod4+Alt+s
+
+# file manger, Window+e+e, don't know where to change binding for Nemo search'
+"xdg-open ~"
+  Mod4 + e
+
+# download folder
+"xdg-open ~/Downloads"
+  Mod4+Alt+d
+
+# garbage bin
+"xdg-open trash:///"
+  Mod4+Alt+t
+
+# system monitor (htop) (kde style)
+# demo: https://www.youtube.com/watch?v=ZnEDfqr4Rm0
+# "gnome-terminal -fg white -bg black -fa 'Monospace' -fs 14 -e htop"
+#   Control+Escape
+
+# system monitor (htop) alternative (windows style)
+# "gnome-terminal -fg white -bg black -fa 'Monospace' -fs 14 -e htop"
+#   Control+Alt+Delete
+
+# lock screen, must change bindings General, Troubleshooting, Toggle Looking glass 
+"cinnamon-screensaver-command -l; xset dpms force off;"
+  Mod4+l
+
+# https://github.com/gotbletu/shownotes/blob/master/.xbindkeysrc
+
+#}}}
 ##################################
 # End of xbindkeys configuration #
 ##################################

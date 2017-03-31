@@ -33,12 +33,21 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 
 
 " Initialize plugin system
 call plug#end()
-" on startup run :PluginInstall
+" on startup run :PlugInstall
 
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'molokai'
+"let g:airline_theme = 'onedark'
+let g:airline_detect_modified = 1
+let g:airline_detect_paste = 1
+" set background=dark
 
 " From https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 " Set leader key to space instead of \

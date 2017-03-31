@@ -163,13 +163,20 @@ bindkey ' ' expand-ealias #  -M viins
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-ealias cfgzsh="code ~/.zshrc"
-ealias cfgomz="code ~/.oh-my-zsh"
+ealias cfzsh="code ~/.zshrc"
+ealias cfomz="code ~/.oh-my-zsh"
+ealias cfdoc="code ~/Documents"
 
 # some more ls aliases
 ealias ll='ls -alF'
 ealias la='ls -A'
 ealias l='ls -CF'
+
+ealias tm='tmuxp load ~/Documents/dotfiles/session.yaml'
+ealias tma='tmux attach-session -t'
+ealias tmk='tmux kill-session -a -t'
+ealias tml='tmux ls'
+
 
 # fzf fuzzy search, ^F history, ^Q quit ps, ^E folder
 fzf_history() { zle -I; eval $(history | fzf +s | sed 's/ *[0-9]* *//') ; }; zle -N fzf_history; bindkey '^F' fzf_history
@@ -193,3 +200,5 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
+# for tmuxp, pip3 install --user tmuxp
+export DISABLE_AUTO_TITLE='true'

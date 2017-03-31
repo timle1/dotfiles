@@ -1,13 +1,13 @@
 #!/bin/bash
 ############################
 # makesymlinks.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+# This script creates symlinks from the home directory to any desired dotfiles in ~/Documents/dotfiles
 ############################
 
 ########## Variables
 
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
+dir=~/Documents/dotfiles                    # dotfiles directory
+olddir=~/Documents/dotfiles_old             # old dotfiles backup directory
 files="bashrc zshrc xbindkeysrc gitconfig gitignore tmux.conf vimrc"    # list of files/folders to symlink in homedir
 # profile
 
