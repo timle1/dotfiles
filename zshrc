@@ -172,13 +172,22 @@ ealias ll='ls -alF'
 ealias la='ls -A'
 ealias l='ls -CF'
 
+# tmux aliases
 ealias tm='tmuxp load ~/Documents/dotfiles/session.yaml'
 ealias tma='tmux attach-session -t'
 ealias tmk='tmux kill-session -a -t'
 ealias tml='tmux ls'
 
+# go to aliases
+ealias gdoc='cd ~/Documents'
+ealias gdot='cd ~/Documents/dotfiles'
+ealias gnot='cd ~/Documents/notes'
 
-# fzf fuzzy search, ^F history, ^Q quit ps, ^E folder
+# git aliases
+ealias gch='git checkout --track $(git branch -r | fzf)'
+ealias gco="git commit -am"
+
+# fzf fuzzy search, ^F history, ^Q quit ps, ^E cd into subfolder
 fzf_history() { zle -I; eval $(history | fzf +s | sed 's/ *[0-9]* *//') ; }; zle -N fzf_history; bindkey '^F' fzf_history
 
 fzf_killps() { zle -I; ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9} ; }; zle -N fzf_killps; bindkey '^Q' fzf_killps
@@ -187,7 +196,7 @@ fzf_cd() { zle -I; DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# ^z to bring job to fg
+# ^Z to bring job to fg
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
     BUFFER="fg"

@@ -19,7 +19,7 @@ Plug 'tmhedberg/SimpylFold'
 "Plugin 'vim-scripts/indentpython.vim'
 Plug 'w0rp/ale'
 Plug 'python-mode/python-mode'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'jnurmine/Zenburn'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -39,15 +39,36 @@ Plug 'vim-airline/vim-airline'
 
 " Initialize plugin system
 call plug#end()
-" on startup run :PlugInstall
+" https://github.com/junegunn/vim-plug :PlugInstall PlugUpdate PlugUpgrade PlugClean
 
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'molokai'
+"let g:airline_theme = 'molokai'
+let g:airline_theme = 'powerlineish'
 "let g:airline_theme = 'onedark'
 let g:airline_detect_modified = 1
 let g:airline_detect_paste = 1
 " set background=dark
+
+
+" from https://www.fullstackpython.com/vim.html
+"
+" enable syntax highlighting
+syntax enable
+
+" show line numbers
+set number
+
+" show a visual line under the cursor's current line
+set cursorline
+
+" show the matching part of the pair for [] {} and ()
+set showmatch
+
+set encoding=utf-8
+set splitbelow
+set splitright
+
 
 " From https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 " Set leader key to space instead of \
@@ -65,6 +86,8 @@ vmap <Leader>p "+p
 vmap <Leader>P "+P
 " Enter visual line mode with <Space><Space>:
 nmap <Leader><Leader> V
+
+nmap S :update<CR>
 
 " Expand and shrink region via terryma/vim-expand-region
 vmap v <Plug>(expand_region_expand)
@@ -89,74 +112,30 @@ endfunction
 vmap <silent> <expr> p <sid>Repl()
 
 " Quickly select text you just pasted:
-noremap gV `[v`]
+noremap <Leader>v `[v`]
 " Stop that stupid window from popping up:
 map q: :q
 
 
-" from https://www.fullstackpython.com/vim.html
-"
-" enable syntax highlighting
-syntax enable
-
-" show line numbers
-set number
-
-" show a visual line under the cursor's current line
-set cursorline
-
-" show the matching part of the pair for [] {} and ()
-set showmatch
-
-
-" from https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/#vim-extensions
-"
-"split :sp and :vs, navigations ^hjkl, use tmux instead 
-set splitbelow
-set splitright
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
 " Enable folding with the spacebar
-nnoremap <space> za
+nnoremap <Leader>f za
 let g:SimpylFold_docstring_preview=1
 
-"au BufNewFile,BufRead *.js, *.html, *.css
-"    \ set tabstop=2
-"    \ set softtabstop=2
-"    \ set shiftwidth=2
-"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
-set encoding=utf-8
 
 "YCM completion window
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let g:pymode_python = 'python3'
-
 let python_highlight_all=1
-syntax on
-if has('gui_running')
-  set background=dark
-  colorscheme solarized
-else
-  colorscheme zenburn
-endif
-"switch between light and dark solarized theme with F5
-call togglebg#map("<F5>")
+
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
-"show line numbers
-set nu
 "use X11 clipboard instead of vim buffer
 set clipboard=unnamed
 
