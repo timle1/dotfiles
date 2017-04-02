@@ -211,3 +211,12 @@ bindkey '^Z' fancy-ctrl-z
 
 # for tmuxp, pip3 install --user tmuxp
 export DISABLE_AUTO_TITLE='true'
+
+# https://github.com/chrisallenlane/cheat
+export DEFAULT_CHEAT_DIR='$HOME/Documents/notes/cheat'
+export CHEATCOLORS=true
+# cheat zsh autocomplete; add to ~/.zshrc
+_cmpl_cheat() {
+	reply=($(cheat -l | cut -d' ' -f1))
+}
+compctl -K _cmpl_cheat cheat
