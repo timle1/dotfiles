@@ -8,7 +8,7 @@ export ZSH=/home/tenacity/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
-DEFAULT_USER="tenacity"
+DEFAULT_USER=$USER
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -187,14 +187,6 @@ ealias gnot='cd ~/Documents/notes'
 ealias gch='git checkout --track $(git branch -r | fzf)'
 ealias gco="git commit -am"
 
-# fzf fuzzy search, ^F history, ^Q quit ps, ^E cd into subfolder
-fzf_history() { zle -I; eval $(history | fzf +s | sed 's/ *[0-9]* *//') ; }; zle -N fzf_history; bindkey '^F' fzf_history
-
-fzf_killps() { zle -I; ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9} ; }; zle -N fzf_killps; bindkey '^Q' fzf_killps
-
-fzf_cd() { zle -I; DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR" ; }; zle -N fzf_cd; bindkey '^E' fzf_cd
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ^Z to bring job to fg
 fancy-ctrl-z () {
@@ -220,3 +212,52 @@ _cmpl_cheat() {
 	reply=($(cheat -l | cut -d' ' -f1))
 }
 compctl -K _cmpl_cheat cheat
+
+# https://github.com/gotbletu/shownotes/blob/master/fzf-snippet.md
+# fzf fuzzy search, ^F history, ^Q quit ps, ^E cd into subfolder
+fzf_history() { zle -I; eval $(history | fzf +s | sed 's/ *[0-9]* *//') ; }; zle -N fzf_history; bindkey '^F' fzf_history
+
+fzf_killps() { zle -I; ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9} ; }; zle -N fzf_killps; bindkey '^Q' fzf_killps
+
+fzf_cd() { zle -I; DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR" && ls; }; zle -N fzf_cd; bindkey '^E' fzf_cd
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# location of snippets
+snippets_dir=~/Documents/notes/snippets
+
+# edit single line snippet
+cfg-snippetrc() { $EDITOR ~/.snippetrc ;}
+
+# edit multiline snippet
+cfg-multisnippetrc() { $EDITOR $snippets_dir/"$(ls $snippets_dir | fzf -e -i)" ;}
+
+#create new multiline snippet
+multisnippet() { $EDITOR $snippets_dir/"$1" ;}
+
+fzf-snippet() { 
+  selected="$(cat ~/.snippetrc | sed '/^$/d' | sort -n | fzf -e -i )"
+  # remove tags, leading and trailing spaces, also no newline
+  echo "$selected" | sed -e s/\;\;\.\*\$// | sed 's/^[ \t]*//;s/[ \t]*$//' | tr -d '\n' | xclip -selection clipboard
+}
+
+fzf-multisnippet() { 
+
+
+  # merge filename and tags into single line
+  results=$(for FILE in $snippets_dir/*
+  do
+    getname=$(basename $FILE)
+    gettags=$(head -n 1 $FILE)
+
+    echo "$getname \t $gettags" 
+
+  done)
+
+  # copy content into clipboard without tags
+  filename=$(echo "$(echo $results | fzf -e -i )" | cut -d' ' -f 1)
+  sed 1d $snippets_dir/$filename | xclip -selection clipboard
+}
+
+# https://github.com/gotbletu/shownotes/blob/master/fzf_locate_fzf_playonlinux.md
+fzf-locate() { xdg-open "$(locate "*" | fzf -e)" ;}
