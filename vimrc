@@ -24,7 +24,7 @@ Plug 'python-mode/python-mode'
 Plug 'jnurmine/Zenburn'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-  Plug 'jistr/vim-nerdtree-tabs'
+"  Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-fugitive'
 Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plug 'vimwiki/vimwiki'
@@ -71,15 +71,16 @@ set splitright
 " From https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 " Set leader key to space instead of \
 let mapleader = "\<Space>"
-" Type <Space>o to open a new file:
-nnoremap <Leader>o :CtrlP<CR>
+" Type <Space>n to create a new file:
+nnoremap <Leader>n :e %:h/
+
 " Type <Space>w to save file (a lot faster than :w<Enter>):
 nnoremap <Leader>w :w<CR>
 
 " Enter visual line mode with <Space><Space>:
 nmap <Leader><Leader> V
 
-"nmap S :update<CR>
+nmap Q :q<CR>
 
 " Expand and shrink region via terryma/vim-expand-region
 vmap v <Plug>(expand_region_expand)
@@ -109,13 +110,13 @@ noremap <Leader>v `[v`]
 map q: :q
 
 " FZF bindings
-let g:fzf_command_prefix = 'Fzf'
+" let g:fzf_command_prefix = 'Fzf'
 " buffers are currently opened files
-nnoremap <Leader>b :FzfBuffers<CR>
-nnoremap <Leader>c :FzfCommands<CR>
-" find text in opened files"
-nnoremap <Leader>l :FzfBLines<CR>
-
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>c :Commands<CR>
+" find text in open"ed files"
+nnoremap <Leader>f :BLines<CR>
+"
 "imap <c-x><c-k> <plug>(fzf-complete-word)
 "imap <c-x><c-l> <plug>(fzf-complete-line)
 "imap <c-x><c-f> <plug>(fzf-complete-file)
@@ -124,9 +125,9 @@ nnoremap <Leader>l :FzfBLines<CR>
 fun! FzfOmniFiles()
   let is_git = system('git status')
   if v:shell_error
-    :FzfFiles
+    :Files
   else
-    :FzfGitFiles
+    :GitFiles
   endif
 endfun
 nnoremap <C-p> :call FzfOmniFiles()<CR>
@@ -136,7 +137,7 @@ nnoremap <C-p> :call FzfOmniFiles()<CR>
 set foldmethod=indent
 set foldlevel=99
 " Enable folding with the spacebar
-nnoremap <Leader>f za
+nnoremap <Leader>[ za
 let g:SimpylFold_docstring_preview=1
 
 
@@ -152,8 +153,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 "close vim if the only window left open is a NERDTree
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-map <C-n> :NERDTreeToggle<CR>
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
+map <C-b> :NERDTreeToggle<CR>
 
 
 "use X11 clipboard instead of vim buffer

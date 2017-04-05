@@ -242,8 +242,6 @@ fzf-snippet() {
 }
 
 fzf-multisnippet() { 
-
-
   # merge filename and tags into single line
   results=$(for FILE in $snippets_dir/*
   do
