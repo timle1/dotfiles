@@ -1,5 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 // ~/.config/Code/User/
+// or File> Preferences> Settings
 {
     "files.associations": {
         "*rc": "shellscript"
@@ -10,12 +11,12 @@
     "vim.startInInsertMode": true,
     "vim.useCtrlKeys": false, // Enable Vim ctrl keys overriding common VS Code operations (eg. copy, paste, find, etc)
     "vim.hlsearch": true, // When there is a previous search pattern, highlight all its matches
-    "vim.insertModeKeyBindings": [
-        { // Bind jjj to <Esc> in insert mode
-            "before": ["j","j","j"],
-            "after": ["<Esc>"]
-        }
-    ],
+    // "vim.insertModeKeyBindings": [
+    //     { // Bind jjj to <Esc> in insert mode
+    //         "before": ["j","j","j"],
+    //         "after": ["<Esc>"]
+    //     }
+    // ],
     "vim.leader": "<space>", // For binding in Normal mode
     "vim.otherModesKeyBindingsNonRecursive": [
         { // Bind : to show the command palette:
@@ -26,6 +27,26 @@
             "commands": [
                 {
                     "command": "workbench.action.showCommands",
+                    "args": []
+                }
+            ]
+        },
+        { // Bind ZZ to save and close the current file
+            "before": ["v"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.smartSelect.grow",
+                    "args": []
+                }
+            ]
+        },
+        { // Bind ZZ to save and close the current file
+            "before": ["V"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.smartSelect.shrink",
                     "args": []
                 }
             ]
@@ -44,6 +65,16 @@
                 }
             ]
         },
+        { // Bind ZZ to save and close the current file
+            "before": ["S"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                }
+            ]
+        },
         {
             "before": [
                 "<leader>",
@@ -54,5 +85,6 @@
                 "d"
             ]
         }
-    ]
+    ],
+    "editor.wordWrap": true
 }

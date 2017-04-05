@@ -18,6 +18,8 @@
     // Left and right key too far from home row, use h and l instead
     { "key": "ctrl+space h",    "command": "workbench.action.focusPreviousGroup" },
     { "key": "ctrl+space l",    "command": "workbench.action.focusNextGroup" },
+    { "key": "alt+left",  "command": "workbench.action.moveActiveEditorGroupLeft" },
+    { "key": "alt+right",  "command": "workbench.action.moveActiveEditorGroupRight" },
 
     // Like down arrow in Shell history
     { "key": "ctrl+n",  "command": "selectNextSuggestion",
@@ -31,5 +33,7 @@
     { "key": "ctrl+shift+g", "command": "editor.action.goToDeclaration",
                             "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor" },
     { "key": "ctrl+shift+r",  "command": "editor.action.rename",
-                            "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly" }
+                            "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly" },
+    { "key": "ctrl+.",            "command": "editor.action.triggerSuggest",
+                                     "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly" }
 ]
