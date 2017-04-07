@@ -7,16 +7,17 @@ windows:
   panes:
     - shell_command:           # pane no. 1
         - ls $PWD          # run multiple commands in this pane
-        - echo 'Window 1'
+        - cheat my.alias.md
 - window_name: notes
   shell_command_before: cd $HOME/Documents/notes
   layout: main-vertical
   panes:
   - shell_command:
-    - vim CLI/index.md
+    - cat CLI/vimBasic.md
+    - ls
     focus: true
   - shell_command:
-    - cat CLI/vimBasic.md
+    - cat CLI/vimAdv.md
 - window_name: tmux
   layout: main-vertical
   panes:

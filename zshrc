@@ -163,9 +163,9 @@ bindkey ' ' expand-ealias #  -M viins
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-ealias cfzsh="code ~/.zshrc"
-ealias cfomz="code ~/.oh-my-zsh"
-ealias cfdoc="code ~/Documents"
+ealias ezsh="code ~/.zshrc"
+ealias eomz="code ~/.oh-my-zsh"
+ealias edoc="code ~/Documents"
 
 # some more ls aliases
 ealias ll='ls -alF'
@@ -179,13 +179,13 @@ ealias tmk='tmux kill-session -a -t'
 ealias tml='tmux ls'
 
 # go to aliases
-ealias gdoc='cd ~/Documents'
-ealias gdot='cd ~/Documents/dotfiles'
-ealias gnot='cd ~/Documents/notes'
+ealias cdoc='cd ~/Documents'
+ealias cdot='cd ~/Documents/dotfiles'
+ealias cnot='cd ~/Documents/notes'
 
 # git aliases
-ealias gch='git checkout --track $(git branch -r | fzf)'
-ealias gco="git commit -am"
+ealias gche='git checkout --track $(git branch -r | fzf)'
+ealias gcom="git commit -am"
 
 
 # ^Z to bring job to fg
