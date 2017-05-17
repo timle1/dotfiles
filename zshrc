@@ -258,4 +258,37 @@ fzf-multisnippet() {
 }
 
 # https://github.com/gotbletu/shownotes/blob/master/fzf_locate_fzf_playonlinux.md
-fzf-locate() { xdg-open "$(locate "*" | fzf -e)" ;}
+fzf-locate() { xdg-open "$(locate "*" | fzf -e)" ;}; zle -N fzf-locate; bindkey '^G' fzf-locate
+
+# disable because history search is not intuitive as fzf
+# # https://github.com/gotbletu/shownotes/blob/master/zsh_vim_mode.txt
+# # enable vim mode on commmand line
+# bindkey -v
+
+# # no delay entering normal mode
+# # https://coderwall.com/p/h63etq
+# # https://github.com/pda/dotzsh/blob/master/keyboard.zsh#L10
+# # 10ms for key sequences
+# KEYTIMEOUT=1
+
+# # show vim status
+# # http://zshwiki.org/home/examples/zlewidgets
+# function zle-line-init zle-keymap-select {
+#     RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+#     RPS2=$RPS1
+#     zle reset-prompt
+# }
+# zle -N zle-line-init
+# zle -N zle-keymap-select
+
+# # add missing vim hotkeys
+# # http://zshwiki.org/home/zle/vi-mode
+# bindkey -a u undo
+# bindkey -a '^T' redo
+# bindkey '^?' backward-delete-char  #backspace
+
+# # history search in vim mode
+# # http://zshwiki.org./home/zle/bindkeys#why_isn_t_control-r_working_anymore
+# # ctrl+r to search history
+# bindkey -M viins '^r' history-incremental-search-backward
+# bindkey -M vicmd '^r' history-incremental-search-backward

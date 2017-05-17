@@ -24,6 +24,7 @@
 # List of modifier:
 #   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
 #   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#   Mod4 = Windows key
 #
 
 # The release modifier is not a standard X modifier, but you can
@@ -91,8 +92,8 @@
 
 # search files
 # demo: https://www.youtube.com/watch?v=C64LKCZFzME
-# "gnome-terminal -fullscreen -fg white -bg black -fa 'Monospace' -fs 14 -e ranger --cmd=fzf_locate"
-#   Mod4+Alt+s
+"gnome-terminal -fullscreen -fg white -bg black -fa 'Monospace' -fs 14 -e ranger --cmd=fzf_locate"
+  Mod4+Alt+s
 
 # file manger, Window+e+e, don't know where to change binding for Nemo search'
 "xdg-open ~"
@@ -108,12 +109,12 @@
 
 # system monitor (htop) (kde style)
 # demo: https://www.youtube.com/watch?v=ZnEDfqr4Rm0
-# "gnome-terminal -fg white -bg black -fa 'Monospace' -fs 14 -e htop"
-#   Control+Escape
+"gnome-terminal -fg white -bg black -fa 'Monospace' -fs 14 -e htop"
+  Control+Escape
 
 # system monitor (htop) alternative (windows style)
-# "gnome-terminal -fg white -bg black -fa 'Monospace' -fs 14 -e htop"
-#   Control+Alt+Delete
+"gnome-terminal -fg white -bg black -fa 'Monospace' -fs 14 -e htop"
+  Control+Alt+Delete
 
 # lock screen, must change bindings General, Troubleshooting, Toggle Looking glass 
 "cinnamon-screensaver-command -l; xset dpms force off;"
