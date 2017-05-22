@@ -68,13 +68,18 @@
 
 # Enter key
 "xte 'key Return'"
-   control + b:8
+  control + b:8
+
+# TTS shortcut
+"xte 'keydown Alt_L' 'keydown Shift_L' 'key s' 'keyup Alt_L' 'keyup Shift_L'"
+  control + b:9
+
 # Copy
 "xte 'keydown Control_L' 'key c' 'keyup Control_L'"
-   b:8
+  b:8
 # Paste
 "xte 'keydown Control_L' 'key v' 'keyup Control_L'"
-   b:9
+  b:9
 # Copy, shift for terminal
 "xte 'keydown Control_L' 'keydown Shift_L' 'key c' 'keyup Control_L' 'keyup Shift_L'"
    shift + b:8
