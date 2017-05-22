@@ -71,7 +71,7 @@
   control + b:8
 
 # TTS shortcut
-"xte 'keydown Alt_L' 'keydown Shift_L' 'key s' 'keyup Alt_L' 'keyup Shift_L'"
+"xsel | espeak -s 300 -v mb-us3"
   control + b:9
 
 # Copy
