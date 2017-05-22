@@ -68,13 +68,6 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nano'
-else
-  export EDITOR='code'
-fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -182,10 +175,12 @@ ealias tml='tmux ls'
 ealias cdoc='cd ~/Documents'
 ealias cdot='cd ~/Documents/dotfiles'
 ealias cnot='cd ~/Documents/notes'
+ealias ccur='cd ~/Documents/ubuntu1604vagrant'
 
 # git aliases
-ealias gche='git checkout --track $(git branch -r | fzf)'
-ealias gcom="git commit -am"
+ealias gch='git checkout --track $(git branch -r | fzf)'
+ealias gco="git commit -am"
+ealias gst="git status"
 
 
 # ^Z to bring job to fg
@@ -214,12 +209,22 @@ _cmpl_cheat() {
 compctl -K _cmpl_cheat cheat
 
 # https://github.com/gotbletu/shownotes/blob/master/fzf-snippet.md
-# fzf fuzzy search, ^F history, ^Q quit ps, ^E cd into subfolder
+# fzf fuzzy search, ^F history, ^Q quit ps, ^G cd into subfolder, ^E locate edit file
 fzf_history() { zle -I; eval $(history | fzf +s | sed 's/ *[0-9]* *//') ; }; zle -N fzf_history; bindkey '^F' fzf_history
 
 fzf_killps() { zle -I; ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9} ; }; zle -N fzf_killps; bindkey '^Q' fzf_killps
 
-fzf_cd() { zle -I; DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR" && ls; }; zle -N fzf_cd; bindkey '^E' fzf_cd
+fzf_cd() { zle -I; DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR" && ls; }; zle -N fzf_cd; bindkey '^G' fzf_cd
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nano'
+else
+  export EDITOR='code'
+fi
+
+# https://github.com/gotbletu/shownotes/blob/master/fzf_locate_fzf_playonlinux.md
+fzf-locate() { xdg-open "$(locate "*" | fzf -e)" ;}; zle -N fzf-locate; bindkey '^E' fzf-locate
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -256,9 +261,7 @@ fzf-multisnippet() {
   filename=$(echo "$(echo $results | fzf -e -i )" | cut -d' ' -f 1)
   sed 1d $snippets_dir/$filename | xclip -selection clipboard
 }
-
-# https://github.com/gotbletu/shownotes/blob/master/fzf_locate_fzf_playonlinux.md
-fzf-locate() { xdg-open "$(locate "*" | fzf -e)" ;}; zle -N fzf-locate; bindkey '^G' fzf-locate
+# use tmux to bindkey ' fzf-snippet and " fzf-multisnippet
 
 # disable because history search is not intuitive as fzf
 # # https://github.com/gotbletu/shownotes/blob/master/zsh_vim_mode.txt
