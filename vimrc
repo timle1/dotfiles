@@ -80,7 +80,7 @@ nnoremap <Leader>w :w<CR>
 " Enter visual line mode with <Space><Space>:
 nmap <Leader><Leader> V
 
-nmap Q :q<CR>
+nmap <Leader>q :q<CR>
 
 " Expand and shrink region via terryma/vim-expand-region
 vmap v <Plug>(expand_region_expand)

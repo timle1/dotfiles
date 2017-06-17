@@ -167,9 +167,10 @@ ealias l='ls -CF'
 
 # tmux aliases
 ealias tm='tmuxp load ~/Documents/dotfiles/session.yaml'
-ealias tma='tmux attach-session -t'
-ealias tmk='tmux kill-session -a -t'
 ealias tml='tmux ls'
+ealias tma='tmux attach-session -t'
+ealias tmk='tmux kill-session -t'
+ealias tmka="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
 
 # go to aliases
 ealias cdoc='cd ~/Documents'
@@ -224,7 +225,7 @@ else
 fi
 
 # https://github.com/gotbletu/shownotes/blob/master/fzf_locate_fzf_playonlinux.md
-fzf-locate() { xdg-open "$(locate "*" | fzf -e)" ;}; zle -N fzf-locate; bindkey '^E' fzf-locate
+fzf-locate() { xdg-open "$(locate "*" | fzf -e)" ;}; zle -N fzf-locate; bindkey '^O' fzf-locate
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

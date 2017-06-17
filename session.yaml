@@ -8,6 +8,8 @@ windows:
     - shell_command:           # pane no. 1
         - ls $PWD          # run multiple commands in this pane
         - cheat my.alias.md
+    - shell_command:           # pane no. 2
+        - cat $HOME/Documents/notes/CLI/zsh.md
 - window_name: notes
   shell_command_before: cd $HOME/Documents/notes
   layout: main-vertical
