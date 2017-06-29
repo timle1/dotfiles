@@ -3,7 +3,9 @@
 // or File> Preferences> Settings
 {
     "files.associations": {
-        "*rc": "shellscript"
+        "*rc": "shellscript",
+        "Vagrantfile": "ruby",
+        "Vagrantfile-simple": "ruby"
     },
     "vim.easymotion": true, // <leader> <leader> w	Start of word forwards
     "vim.incsearch": true, // Show the next search match while you're searching.
@@ -18,6 +20,15 @@
     //     }
     // ],
     "vim.leader": "<space>", // For binding in Normal mode
+    
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "Ctrl", "["
+            ],
+            "after": ["<Esc>"]
+        }
+    ],
     "vim.otherModesKeyBindingsNonRecursive": [
         { // Bind : to show the command palette:
             "before": [
@@ -31,7 +42,67 @@
                 }
             ]
         },
-        { // Bind ZZ to save and close the current file
+        { // Bind  to show the command palette:
+            "before": [
+                "<leader>", "n"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "explorer.newFile",
+                    "args": []
+                }
+            ]
+        },
+        { // Bind  to show the command palette:
+            "before": [
+                "<leader>", "w"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                }
+            ]
+        },
+        { // Bind  to show the command palette:
+            "before": [
+                "<leader>", "q"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.closeActiveEditor",
+                    "args": []
+                }
+            ]
+        },
+        { // Bind  to show the command palette:
+            "before": [
+                "<leader>", "y"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.clipboardCopyAction",
+                    "args": []
+                }
+            ]
+        },
+        { // Bind  to show the command palette:
+            "before": [
+                "<leader>", "p"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.clipboardPasteAction",
+                    "args": []
+                }
+            ]
+        },
+        { // Bind v expand selection
             "before": ["v"],
             "after": [],
             "commands": [
@@ -41,7 +112,7 @@
                 }
             ]
         },
-        { // Bind ZZ to save and close the current file
+        { // Bind V shrink selection
             "before": ["V"],
             "after": [],
             "commands": [
@@ -65,26 +136,17 @@
                 }
             ]
         },
-        { // Bind ZZ to save and close the current file
-            "before": ["S"],
+        { // Bind V shrink selection
+            "before": ["<leader>", "b"],
             "after": [],
             "commands": [
                 {
-                    "command": "workbench.action.files.save",
+                    "command": "filesExplorer.findInFolder",
                     "args": []
                 }
             ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "d"
-            ],
-            "after": [
-                "d",
-                "d"
-            ]
         }
     ],
-    "editor.wordWrap": true
+    "editor.wordWrap": true,
+    "vim.disableAnnoyingNeovimMessage": true
 }

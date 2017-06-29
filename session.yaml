@@ -1,6 +1,7 @@
 session_name: defs          #tmuxp load ~/Documents/dotfiles/session.yaml
 windows:
 - window_name: zsh
+  layout: main-vertical
   focus: True
   shell_command_before:
     - pwd                    # run as a first command in all panes

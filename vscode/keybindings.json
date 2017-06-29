@@ -4,9 +4,9 @@
 [
     // Like tmux, change prefix to ctrl+space
     { "key": "ctrl+space shift+\\",  "command": "workbench.action.splitEditor" },
-    { "key": "ctrl+space x",        "command": "workbench.action.closeActiveEditor" },
+    { "key": "ctrl+space x",        "command": "workbench.action.closeEditorsInGroup" },
     { "key": "ctrl+space space",    "command": "workbench.action.toggleEditorGroupLayout" },
-    { "key": "ctrl+space o",        "command": "workbench.action.focusNextGroup" },
+    { "key": "ctrl+space o",        "command": "workbench.action.focusPreviousGroup" },
     { "key": "ctrl+space shift+[",  "command": "workbench.action.moveActiveEditorGroupLeft" },
     { "key": "ctrl+space shift+]",  "command": "workbench.action.moveActiveEditorGroupRight" },
     { "key": "ctrl+space c",        "command": "workbench.action.newWindow" },
@@ -35,5 +35,7 @@
     { "key": "ctrl+shift+r",  "command": "editor.action.rename",
                             "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly" },
     { "key": "ctrl+.",            "command": "editor.action.triggerSuggest",
-                                     "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly" }
+                                     "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly" },
+    {"key": "capslock", "command": "extension.vim_escape",
+"when": "editorTextFocus && vim.active && !inDebugRepl" }
 ]
