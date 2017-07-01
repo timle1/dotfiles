@@ -5,8 +5,8 @@
 ############################
 
 ########## Variables
-
-dir=~/Documents/dotfiles                    # dotfiles directory
+dir=$(dirname "$(readlink -f "$0")")
+# dir=~/Documents/dotfiles                    # for Mac, -f doesn't work
 olddir=~/Documents/dotfiles_old             # old dotfiles backup directory
 files="bashrc zshrc xbindkeysrc gitconfig gitignore tmux.conf vimrc snippetrc"    # list of files/folders to symlink in homedir
 # profile
@@ -36,8 +36,8 @@ function link_vscode () {
     mv $vscode_dir/keybindings.json $olddir/
     mv $vscode_dir/settings.json $olddir/
     echo "copied Visual Studio Code files"
-    ln -s vscode/keybindings.json $vscode_dir/keybindings.json
-    ln -s vscode/settings.json $vscode_dir/settings.json
+    ln -s $dir/vscode/keybindings.json $vscode_dir/keybindings.json
+    ln -s $dir/vscode/settings.json $vscode_dir/settings.json
 }
 # comment out line below if not using visual studio code
 link_vscode
