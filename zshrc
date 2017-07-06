@@ -165,6 +165,12 @@ ealias ll='ls -alF'
 ealias la='ls -A'
 ealias l='ls -CF'
 
+# lxc aliases
+ealias lxcl='sudo lxc-ls -f'
+ealias lxcs='sudo lxc-stop -n '
+ealias lxcd='sudo lxc-destroy -n '
+ealias lxca='sudo lxc-attach -n '
+
 # tmux aliases
 ealias tm='tmuxp load ~/Documents/dotfiles/session.yaml'
 ealias tml='tmux ls'
