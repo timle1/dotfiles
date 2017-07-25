@@ -1,3 +1,7 @@
 http://i.imgur.com/CGQJxHi.jpg						;;adblocker thug complains website goes down image meme
 https://www.youtube.com/watch?v=Zew0mgJwAh8         ;;gotbletu snippets setup
 $snippets_dir       ;;location of multiline snippets
+pyenv virtualenv 3.6.2 venv             ;;create virtualenv
+pyenv activate venv                     ;;use virtualenv
+pyenv deactivate                        ;;deactivate virtualenv
+https://amaral.northwestern.edu/resources/guides/pyenv-tutorial         ;;pyenv tutorial for virtualenv

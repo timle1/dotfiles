@@ -182,3 +182,17 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 " https://github.com/suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0	" disable autostart
 map <leader>md :InstantMarkdownPreview<CR>
+
+let g:airline_theme='minimalist'
+let g:miniBufExplForceSyntaxEnable = 1
+let g:Powerline_symbols='unicode'
+let g:airline_powerline_fonts=1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+:set laststatus=2
+:set t_Co=256
+:set ttimeoutlen=10
+:set encoding=utf-8
+:set term=xterm-256color
