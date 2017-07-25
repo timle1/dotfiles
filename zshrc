@@ -159,6 +159,8 @@ bindkey ' ' expand-ealias #  -M viins
 ealias ezsh="code ~/.zshrc"
 ealias eomz="code ~/.oh-my-zsh"
 ealias edoc="code ~/Documents"
+ealias open='xdg-open '
+
 
 # some more ls aliases
 ealias ll='ls -alF'

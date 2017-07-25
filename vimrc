@@ -26,7 +26,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 "  Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-fugitive'
-Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"  Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plug 'vimwiki/vimwiki'
   Plug 'suan/vim-instant-markdown'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -35,6 +35,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'edkolev/tmuxline.vim'
 
 " Initialize plugin system
 call plug#end()
