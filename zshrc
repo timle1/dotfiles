@@ -270,3 +270,8 @@ fzf-multisnippet() {
 # bindkey -M vicmd '^r' history-incremental-search-backward
 
 killall xbindkeys ; xbindkeys
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
