@@ -121,12 +121,10 @@ if [ -x /usr/bin/mint-fortune ]; then
      /usr/bin/mint-fortune
 fi
 
-# if [ -f `which powerline-daemon` ]; then
-#   powerline-daemon -q
-#   POWERLINE_BASH_CONTINUATION=1
-#   POWERLINE_BASH_SELECT=1
-#   . /home/tenacity/.local/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
-# fi
+# make capslock do escape
+# https://unix.stackexchange.com/questions/378704/disable-both-shift-keys-and-turn-caps-lock-into-a-shift
+# /etc/default/keyboard adding the line XKBOPTIONS="caps:swapescape"
+CL='caps:swapescape' && sudo sed -i 's/XKBOPTIONS=\"\w*"/XKBOPTIONS=\"'$CL'\"/g' /etc/default/keyboard
 
 # fzf ^F search history
 fh() {
