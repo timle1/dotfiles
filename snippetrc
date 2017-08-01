@@ -1,7 +1,37 @@
 http://i.imgur.com/CGQJxHi.jpg						;;adblocker thug complains website goes down image meme
 https://www.youtube.com/watch?v=Zew0mgJwAh8         ;;gotbletu snippets setup
 $snippets_dir       ;;location of multiline snippets
+https://amaral.northwestern.edu/resources/guides/pyenv-tutorial ;;pyenv tutorial for virtualenv
 pyenv virtualenv 3.6.2 venv             ;;create virtualenv
 pyenv activate venv                     ;;use virtualenv
-pyenv deactivate                        ;;deactivate virtualenv
-https://amaral.northwestern.edu/resources/guides/pyenv-tutorial         ;;pyenv tutorial for virtualenv
+pyenv deactivate                        ;;deactivate 
+git reset --mixed HEAD~1                ;;undo previous commit by changing index, --soft to move pointer only, --hard to wipe index and files changes
+git checkout -b someNewBranchName shaFromReflog ;;restore to previous commit
+git commit --amend -m                     ;;modify previous commit w/o restore
+https://linuxcontainers.org/lxc/getting-started/                ;;lxc guide
+sudo lxc-create -t download --dist ubuntu --release xenial --arch amd64  -n newCon  ;;lxc create
+sudo lxc-start -d -n newCon             ;;start
+sudo lxc-info -n newCon                 ;;info
+sudo lxc-ls --fancy                     ;;ls
+sudo lxc-attach -n newCon               ;;attach
+sudo lxc-stop -n newCon                 ;;stop
+sudo lxc-destroy -n newCon              ;;destroy
+tmux new -s myname                      ;;new session
+tmux ls                                 ;;ls session
+tmux attach -t myname                   ;;attach session
+tmux rename-session -t <old> <new>      ;;rename session
+tmux kill-session -t myname             ;;kill session
+tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill                     ;;kill all session
+^b d OR ^b :detach                      ;;tmux detach
+docker run -d -p hostP:containerP -v $(pwd):conDir image cmd    ;;run image in background
+docker run -ti -p hostP:containerP image /bin/bash    ;;run image interactive
+docker exec -ti <container_name> bash   ;;interactive bash into running container 
+docker inspect {container name/id}   ;;get ip of and PID of container 
+docker stop $(docker ps -lq)              ;;stop last container
+docker ps -a | grep "pattern" | awk '{print $1}' | xargs docker rm ;;remove containers by pattern
+docker stop $(docker ps -a -q); docker rm $(docker ps -a -q)       ;;stop and remove all containers
+docker build -t imageName DockerfileDir ;;build image
+docker tag localTag registry:5000/tag   ;;tag new image into local repo
+docker push registry:5000/tag           ;;push new image to registry
+docker pull registry:5000/tag           ;;pull image to registry
+docker images -a | grep "pattern" | awk '{print $3}' | xargs docker rmi ;;remove images by pattern
