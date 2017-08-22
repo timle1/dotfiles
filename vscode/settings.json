@@ -148,5 +148,7 @@
         }
     ],
     "editor.wordWrap": true,
-    "vim.disableAnnoyingNeovimMessage": true
+    "vim.disableAnnoyingNeovimMessage": true,
+    "keyboard.dispatch": "keyCode",
+    "files.autoSave": "afterDelay"
 }
