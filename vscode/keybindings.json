@@ -2,22 +2,22 @@
 // ~/.config/Code/User/
 // or File> Preferences> Keyboard Shortcuts
 [
-    // Like tmux, change prefix to ctrl+space
-    { "key": "ctrl+space shift+\\",  "command": "workbench.action.splitEditor" },
-    { "key": "ctrl+space x",        "command": "workbench.action.closeEditorsInGroup" },
-    { "key": "ctrl+space space",    "command": "workbench.action.toggleEditorGroupLayout" },
-    { "key": "ctrl+space o",        "command": "workbench.action.focusPreviousGroup" },
-    { "key": "ctrl+space shift+[",  "command": "workbench.action.moveActiveEditorGroupLeft" },
-    { "key": "ctrl+space shift+]",  "command": "workbench.action.moveActiveEditorGroupRight" },
-    { "key": "ctrl+space c",        "command": "workbench.action.newWindow" },
-    { "key": "ctrl+space shift+7",  "command": "workbench.action.closeWindow" },
-    { "key": "ctrl+space shift+/",  "command": "workbench.action.openGlobalKeybindings" },
-    { "key": "ctrl+space left",     "command": "workbench.action.focusPreviousGroup" },
-    { "key": "ctrl+space right",    "command": "workbench.action.focusNextGroup" },
+    // Like tmux, change prefix to ctrl+.
+    { "key": "ctrl+. shift+\\",  "command": "workbench.action.splitEditor" },
+    { "key": "ctrl+. x",        "command": "workbench.action.closeEditorsInGroup" },
+    { "key": "ctrl+. space",    "command": "workbench.action.toggleEditorGroupLayout" },
+    { "key": "ctrl+. o",        "command": "workbench.action.focusPreviousGroup" },
+    { "key": "ctrl+. shift+[",  "command": "workbench.action.moveActiveEditorGroupLeft" },
+    { "key": "ctrl+. shift+]",  "command": "workbench.action.moveActiveEditorGroupRight" },
+    { "key": "ctrl+. c",        "command": "workbench.action.newWindow" },
+    { "key": "ctrl+. shift+7",  "command": "workbench.action.closeWindow" },
+    { "key": "ctrl+. shift+/",  "command": "workbench.action.openGlobalKeybindings" },
+    { "key": "ctrl+. left",     "command": "workbench.action.focusPreviousGroup" },
+    { "key": "ctrl+. right",    "command": "workbench.action.focusNextGroup" },
 
     // Left and right key too far from home row, use h and l instead
-    { "key": "ctrl+space h",    "command": "workbench.action.focusPreviousGroup" },
-    { "key": "ctrl+space l",    "command": "workbench.action.focusNextGroup" },
+    { "key": "ctrl+. h",    "command": "workbench.action.focusPreviousGroup" },
+    { "key": "ctrl+. l",    "command": "workbench.action.focusNextGroup" },
     { "key": "alt+left",  "command": "workbench.action.moveActiveEditorGroupLeft" },
     { "key": "alt+right",  "command": "workbench.action.moveActiveEditorGroupRight" },
 
@@ -34,8 +34,8 @@
                             "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor" },
     { "key": "ctrl+shift+r",  "command": "editor.action.rename",
                             "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly" },
-    { "key": "ctrl+.",            "command": "editor.action.triggerSuggest",
-                                     "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly" },
+    // { "key": "ctrl+.",            "command": "editor.action.triggerSuggest",
+    //                                  "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly" },
     {"key": "capslock", "command": "extension.vim_escape",
 "when": "editorTextFocus && vim.active && !inDebugRepl" }
 ]
