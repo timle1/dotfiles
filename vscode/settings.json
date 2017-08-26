@@ -13,12 +13,7 @@
     "vim.startInInsertMode": true,
     "vim.useCtrlKeys": false, // Enable Vim ctrl keys overriding common VS Code operations (eg. copy, paste, find, etc)
     "vim.hlsearch": true, // When there is a previous search pattern, highlight all its matches
-    // "vim.insertModeKeyBindings": [
-    //     { // Bind jjj to <Esc> in insert mode
-    //         "before": ["j","j","j"],
-    //         "after": ["<Esc>"]
-    //     }
-    // ],
+
     "vim.leader": "<space>", // For binding in Normal mode
     
     "vim.insertModeKeyBindings": [
@@ -42,7 +37,7 @@
                 }
             ]
         },
-        { // Bind  to show the command palette:
+        { // Bind Ln to newfile:
             "before": [
                 "<leader>", "n"
             ],
@@ -54,7 +49,7 @@
                 }
             ]
         },
-        { // Bind  to show the command palette:
+        { // Bind Lw to show the write file/save:
             "before": [
                 "<leader>", "w"
             ],
@@ -66,7 +61,7 @@
                 }
             ]
         },
-        { // Bind  to show the command palette:
+        { // Bind Lq to close pane/active editor:
             "before": [
                 "<leader>", "q"
             ],
@@ -78,7 +73,7 @@
                 }
             ]
         },
-        { // Bind  to show the command palette:
+        { // Bind Ly to copy:
             "before": [
                 "<leader>", "y"
             ],
@@ -90,7 +85,7 @@
                 }
             ]
         },
-        { // Bind  to show the command palette:
+        { // Bind Lp to paste:
             "before": [
                 "<leader>", "p"
             ],
@@ -103,7 +98,7 @@
             ]
         },
         { // Bind v expand selection
-            "before": ["v"],
+            "before": ["<leader>", "v"],
             "after": [],
             "commands": [
                 {
@@ -113,7 +108,7 @@
             ]
         },
         { // Bind V shrink selection
-            "before": ["V"],
+            "before": ["<leader>", "V"],
             "after": [],
             "commands": [
                 {
@@ -136,7 +131,7 @@
                 }
             ]
         },
-        { // Bind V shrink selection
+        { // Bind Lb to search buffers
             "before": ["<leader>", "b"],
             "after": [],
             "commands": [
@@ -150,5 +145,16 @@
     "editor.wordWrap": true,
     "vim.disableAnnoyingNeovimMessage": true,
     "keyboard.dispatch": "keyCode",
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    // Controls if suggestions should automatically show up while typing
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "editor.acceptSuggestionOnEnter": "off", // Use tab key
+    // Configure editor settings to be overridden for [markdown] language.
+    "[markdown]":  {
+        "editor.quickSuggestions": true
+    }
 }
