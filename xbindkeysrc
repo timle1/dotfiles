@@ -71,21 +71,22 @@
   control + b:8
 
 # TTS shortcut
-"xsel | espeak -s 300 -v mb-us3"
+# "pico2wave --lang=en-US --wave=/tmp/test.wav < xsel; play /tmp/test.wav; rm /tmp/test.wav"
+"xsel | picospeaker --rate 120 --pitch -4 "
   control + b:9
 
 # Copy
 "xte 'keydown Control_L' 'key c' 'keyup Control_L'"
-  b:8
+  b:9
 # Paste
 "xte 'keydown Control_L' 'key v' 'keyup Control_L'"
-  b:9
+  b:8
 # Copy, shift for terminal
 "xte 'keydown Control_L' 'keydown Shift_L' 'key c' 'keyup Control_L' 'keyup Shift_L'"
-   shift + b:8
+   shift + b:9
 # Paste, shift for terminal
 "xte 'keydown Control_L' 'keydown Shift_L' 'key v' 'keyup Control_L' 'keyup Shift_L'"
-   shift + b:9
+   shift + b:8
 
 # reload xbindkeys
 # "xmodmap ~/.Xmodmap && killall xcape && xcape -e 'Hyper_L=Return' && killall xbindkeys && xbindkeys"

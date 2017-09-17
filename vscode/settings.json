@@ -156,5 +156,18 @@
     // Configure editor settings to be overridden for [markdown] language.
     "[markdown]":  {
         "editor.quickSuggestions": true
-    }
+    },
+    
+    "python.formatting.formatOnSave": true,
+    "sync.gist": "5939f0f349414b1aaec35cf1c463a27e",
+    "sync.lastUpload": "2017-09-17T23:08:30.395Z",
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.lastDownload": "",
+    "sync.forceDownload": false,
+    "sync.anonymousGist": false,
+    "sync.host": "",
+    "sync.pathPrefix": "",
+    "sync.quietSync": false,
+    "sync.askGistName": false
 }
