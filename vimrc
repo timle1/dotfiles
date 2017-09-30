@@ -72,6 +72,9 @@ set splitright
 " From https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 " Set leader key to space instead of \
 let mapleader = "\<Space>"
+
+nnoremap ; :
+
 " Type <Space>n to create a new file:
 nnoremap <Leader>n :e %:h/
 
