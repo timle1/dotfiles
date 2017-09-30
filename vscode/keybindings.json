@@ -33,9 +33,25 @@
     { "key": "ctrl+shift+g", "command": "editor.action.goToDeclaration",
                             "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor" },
     { "key": "ctrl+shift+r",  "command": "editor.action.rename",
-                            "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly" },
+            "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+        },
     // { "key": "ctrl+.",            "command": "editor.action.triggerSuggest",
     //                                  "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly" },
-    {"key": "capslock", "command": "extension.vim_escape",
-"when": "editorTextFocus && vim.active && !inDebugRepl" }
-]
+    { "key": "capslock", "command": "extension.vim_escape",
+                    "when": "editorTextFocus && vim.active && !inDebugRepl"
+                },
+    { "key": "ctrl+shift+v",
+        "command": "editor.action.smartSelect.grow",
+        "when": "editorTextFocus"
+        },
+                {
+                    "key": "ctrl+shift+2",
+                    "command": "-extension.vim_ctrl+shift+2",
+                    "when": "editorTextFocus && vim.active && vim.use<C-shift+2>"
+                },
+                {
+                    "key": "ctrl+shift+v",
+                    "command": "-markdown.showPreview",
+                    "when": "editorLangId == 'markdown'"
+                }
+            ]

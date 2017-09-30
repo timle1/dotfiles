@@ -11,24 +11,39 @@
     "vim.incsearch": true, // Show the next search match while you're searching.
     "vim.useSystemClipboard": true, // requires xclip
     "vim.startInInsertMode": true,
-    "vim.useCtrlKeys": false, // Enable Vim ctrl keys overriding common VS Code operations (eg. copy, paste, find, etc)
+    "vim.useCtrlKeys": true, // Enable Vim ctrl keys overriding common VS Code operations, set vim.handleKeys
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-c>": false,
+        "<C-v>": false,
+        "<C-d>": false,
+        "<C-w>": false,
+        "<C-b>": false,
+        "<C-x>": false
+    },
+    "vim.visualstar": true,  // In visual mode, start a search with * or # using the current selection
     "vim.hlsearch": true, // When there is a previous search pattern, highlight all its matches
 
     "vim.leader": "<space>", // For binding in Normal mode
     
     "vim.insertModeKeyBindings": [
         {
-            "before": [
-                "Ctrl", "["
-            ],
+            "before": ["j", "j"],
             "after": ["<Esc>"]
+        },
+        {
+            "before": [ "<C-h>" ],
+            "after": ["<Left>"]
+        },
+        {
+            "before": [ "<C-l>" ],
+            "after": ["<Right>"]
         }
     ],
     "vim.otherModesKeyBindingsNonRecursive": [
         { // Bind : to show the command palette:
-            "before": [
-                ":"
-            ],
+            "before": [ ":" ],
             "after": [],
             "commands": [
                 {
@@ -37,10 +52,22 @@
                 }
             ]
         },
+        {
+            "before": ["Z", "Z"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                },
+                {
+                    "command": "workbench.action.closeActiveEditor",
+                    "args": []
+                }
+            ]
+        },
         { // Bind Ln to newfile:
-            "before": [
-                "<leader>", "n"
-            ],
+            "before": [ "<leader>", "n" ],
             "after": [],
             "commands": [
                 {
@@ -50,9 +77,7 @@
             ]
         },
         { // Bind Lw to show the write file/save:
-            "before": [
-                "<leader>", "w"
-            ],
+            "before": [ "<leader>", "w" ],
             "after": [],
             "commands": [
                 {
@@ -85,6 +110,18 @@
                 }
             ]
         },
+        { // Bind Lm to list marks:
+            "before": [
+                "<leader>", "m"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "numberedBookmarks.listFromAllFiles",
+                    "args": []
+                }
+            ]
+        },
         { // Bind Lp to paste:
             "before": [
                 "<leader>", "p"
@@ -103,6 +140,7 @@
             "commands": [
                 {
                     "command": "editor.action.smartSelect.grow",
+                    "when": "editorTextFocus",
                     "args": []
                 }
             ]
@@ -113,20 +151,7 @@
             "commands": [
                 {
                     "command": "editor.action.smartSelect.shrink",
-                    "args": []
-                }
-            ]
-        },
-        { // Bind ZZ to save and close the current file
-            "before": ["Z", "Z"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "workbench.action.files.save",
-                    "args": []
-                },
-                {
-                    "command": "workbench.action.closeActiveEditor",
+                    "when": "editorTextFocus",
                     "args": []
                 }
             ]
@@ -142,9 +167,18 @@
             ]
         }
     ],
-    "editor.wordWrap": true,
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors" : {
+        "normal": "#005f5f",
+        "insert": "#5f0000",
+        "visual": "#5f00af",
+        "visualline": "#005f87",
+        "visualblock": "#86592d",
+        "replace": "#000000"
+    },
+    "editor.wordWrap": "bounded",
     "vim.disableAnnoyingNeovimMessage": true,
-    "keyboard.dispatch": "keyCode",
+    "keyboard.dispatch": "keydown.keyCode",
     "files.autoSave": "afterDelay",
     // Controls if suggestions should automatically show up while typing
     "editor.quickSuggestions": {
@@ -158,9 +192,11 @@
         "editor.quickSuggestions": true
     },
     
-    "python.formatting.formatOnSave": true,
+    "numberedBookmarks.saveBookmarksInProject": true,
+    "numberedBookmarks.navigateThroughAllFiles": "replace",
+
     "sync.gist": "5939f0f349414b1aaec35cf1c463a27e",
-    "sync.lastUpload": "2017-09-17T23:08:30.395Z",
+    "sync.lastUpload": "2017-09-30T02:27:30.923Z",
     "sync.autoDownload": false,
     "sync.autoUpload": false,
     "sync.lastDownload": "",
@@ -169,5 +205,10 @@
     "sync.host": "",
     "sync.pathPrefix": "",
     "sync.quietSync": false,
-    "sync.askGistName": false
+    "sync.askGistName": false,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#5f0000",
+        "statusBar.noFolderBackground": "#5f0000",
+        "statusBar.debuggingBackground": "#5f0000"
+    }
 }

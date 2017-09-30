@@ -65,6 +65,9 @@ set encoding=utf-8
 set splitbelow
 set splitright
 
+" https://github.com/python-mode/python-mode/blob/develop/doc/pymode.txt
+" let g:pymode_rope_completion_bind = '<C-Space>'
+
 
 " From https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 " Set leader key to space instead of \
@@ -79,6 +82,7 @@ nnoremap <Leader>w :w<CR>
 nmap <Leader><Leader> V
 
 nmap <Leader>q :q<CR>
+nmap <Leader>Q :wqa!<CR>
 
 " Expand and shrink region via terryma/vim-expand-region
 vmap v <Plug>(expand_region_expand)
@@ -115,10 +119,10 @@ nnoremap <Leader>c :Commands<CR>
 " find text in open"ed files"
 nnoremap <Leader>f :BLines<CR>
 "
-"imap <c-x><c-k> <plug>(fzf-complete-word)
-"imap <c-x><c-l> <plug>(fzf-complete-line)
-"imap <c-x><c-f> <plug>(fzf-complete-file)
-"imap <c-x><c-p> <plug>(fzf-complete-path)
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+imap <c-x><c-f> <plug>(fzf-complete-file)
+imap <c-x><c-p> <plug>(fzf-complete-path)
 
 fun! FzfOmniFiles()
   let is_git = system('git status')
@@ -193,3 +197,30 @@ let g:airline_symbols.space = "\ua0"
 :set ttimeoutlen=10
 :set encoding=utf-8
 :set term=xterm-256color
+
+" vim commands cheat sheet course
+
+" show the cursor position
+set ruler
+
+" show incomplete commands
+set showcmd
+
+" show a menu when using tab completion
+set wildmenu
+
+" z enter have 5 lines at the top
+set scrolloff=5
+
+set incsearch
+set smartcase
+
+" set logical line break, don't split words
+set lbr
+
+" auto indent and smart indent
+set ai
+set si
+
+" light background
+set bg=dark
