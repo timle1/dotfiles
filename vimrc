@@ -73,7 +73,7 @@ set splitright
 " Set leader key to space instead of \
 let mapleader = "\<Space>"
 
-nnoremap ; :
+" nnoremap ; :  " repeat search
 
 " Type <Space>n to create a new file:
 nnoremap <Leader>n :e %:h/
