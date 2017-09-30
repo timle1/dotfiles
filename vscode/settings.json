@@ -98,18 +98,6 @@
                 }
             ]
         },
-        { // Bind Ly to copy:
-            "before": [
-                "<leader>", "y"
-            ],
-            "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.clipboardCopyAction",
-                    "args": []
-                }
-            ]
-        },
         { // Bind Lm to list marks:
             "before": [
                 "<leader>", "m"
@@ -122,17 +110,25 @@
                 }
             ]
         },
+        { // Bind Ly to copy:
+            "before": [ "<leader>", "y" ],
+            "after": ["\"", "a", "y"]
+            // "commands": [
+            //     {
+            //         "command": "editor.action.clipboardCopyAction",
+            //         "args": []
+            //     }
+            // ]
+        },
         { // Bind Lp to paste:
-            "before": [
-                "<leader>", "p"
-            ],
-            "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.clipboardPasteAction",
-                    "args": []
-                }
-            ]
+            "before": [ "<leader>", "p" ],
+            "after": ["\"", "a", "p"]
+            // "commands": [
+            //     {
+            //         "command": "editor.action.clipboardPasteAction",
+            //         "args": []
+            //     }
+            // ]
         },
         { // Bind v expand selection
             "before": ["<leader>", "v"],
@@ -178,7 +174,7 @@
     },
     "editor.wordWrap": "bounded",
     "vim.disableAnnoyingNeovimMessage": true,
-    "keyboard.dispatch": "keydown.keyCode",
+    "keyboard.dispatch": "keyCode",
     "files.autoSave": "afterDelay",
     // Controls if suggestions should automatically show up while typing
     "editor.quickSuggestions": {
@@ -196,7 +192,7 @@
     "numberedBookmarks.navigateThroughAllFiles": "replace",
 
     "sync.gist": "5939f0f349414b1aaec35cf1c463a27e",
-    "sync.lastUpload": "2017-09-30T02:27:30.923Z",
+    "sync.lastUpload": "2017-09-30T04:26:26.900Z",
     "sync.autoDownload": false,
     "sync.autoUpload": false,
     "sync.lastDownload": "",

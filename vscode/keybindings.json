@@ -44,6 +44,11 @@
         "command": "editor.action.smartSelect.grow",
         "when": "editorTextFocus"
         },
+        {
+            "command": "workbench.action.closePanel",
+            "key": "ctrl+w",
+            "when": "!editorFocus"
+          },
                 {
                     "key": "ctrl+shift+2",
                     "command": "-extension.vim_ctrl+shift+2",
@@ -54,4 +59,4 @@
                     "command": "-markdown.showPreview",
                     "when": "editorLangId == 'markdown'"
                 }
-            ]
+]
