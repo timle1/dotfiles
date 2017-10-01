@@ -275,3 +275,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# include mongodb bin folder
+PATH_TO_MONGO="$HOME/Downloads/mongodb-linux-x86_64-ubuntu1604-3.4.9/bin"
+if [ -d $PATH_TO_MONGO ] ; then
+	export PATH="$HOME/Downloads/mongodb-linux-x86_64-ubuntu1604-3.4.9/bin:$PATH"
+fi
