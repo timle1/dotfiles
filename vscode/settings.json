@@ -39,6 +39,10 @@
         {
             "before": [ "<C-l>" ],
             "after": ["<Right>"]
+        },
+        {
+            "before": [ "<C-j>" ],
+            "after": ["<Down>"]
         }
     ],
     "vim.otherModesKeyBindingsNonRecursive": [

@@ -58,5 +58,9 @@
                     "key": "ctrl+shift+v",
                     "command": "-markdown.showPreview",
                     "when": "editorLangId == 'markdown'"
+                },
+                {
+                    "key": "ctrl+j",
+                    "command": "-workbench.action.togglePanel"
                 }
-]
+            ]
