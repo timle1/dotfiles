@@ -31,18 +31,6 @@
         {
             "before": ["j", "j"],
             "after": ["<Esc>"]
-        },
-        {
-            "before": [ "<C-h>" ],
-            "after": ["<Left>"]
-        },
-        {
-            "before": [ "<C-l>" ],
-            "after": ["<Right>"]
-        },
-        {
-            "before": [ "<C-j>" ],
-            "after": ["<Down>"]
         }
     ],
     "vim.otherModesKeyBindingsNonRecursive": [
@@ -176,8 +164,11 @@
         "visualblock": "#86592d",
         "replace": "#000000"
     },
-    "editor.wordWrap": "bounded",
     "vim.disableAnnoyingNeovimMessage": true,
+    "amVim.startInInsertMode": true,
+    "amVim.bindCtrlCommands": false,
+    
+    "editor.wordWrap": "bounded",
     "keyboard.dispatch": "keyCode",
     "files.autoSave": "afterDelay",
     // Controls if suggestions should automatically show up while typing

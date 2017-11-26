@@ -38,29 +38,29 @@
     // { "key": "ctrl+.",            "command": "editor.action.triggerSuggest",
     //                                  "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly" },
     { "key": "capslock", "command": "extension.vim_escape",
-                    "when": "editorTextFocus && vim.active && !inDebugRepl"
-                },
+        "when": "editorTextFocus &&  !inDebugRepl"
+        },
     { "key": "ctrl+shift+v",
         "command": "editor.action.smartSelect.grow",
         "when": "editorTextFocus"
         },
-        {
-            "command": "workbench.action.closePanel",
-            "key": "ctrl+w",
-            "when": "!editorFocus"
-          },
-                {
-                    "key": "ctrl+shift+2",
-                    "command": "-extension.vim_ctrl+shift+2",
-                    "when": "editorTextFocus && vim.active && vim.use<C-shift+2>"
-                },
-                {
-                    "key": "ctrl+shift+v",
-                    "command": "-markdown.showPreview",
-                    "when": "editorLangId == 'markdown'"
-                },
-                {
-                    "key": "ctrl+j",
-                    "command": "-workbench.action.togglePanel"
-                }
-            ]
+    {
+        "command": "workbench.action.closePanel",
+        "key": "ctrl+w",
+        "when": "!editorFocus"
+        },
+    {
+        "key": "ctrl+shift+2",
+        "command": "-extension.vim_ctrl+shift+2",
+        "when": "editorTextFocus && vim.active && vim.use<C-shift+2>"
+    },
+    {
+        "key": "ctrl+shift+v",
+        "command": "-markdown.showPreview",
+        "when": "editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    }
+]
