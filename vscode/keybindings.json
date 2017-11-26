@@ -38,7 +38,7 @@
     // { "key": "ctrl+.",            "command": "editor.action.triggerSuggest",
     //                                  "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly" },
     { "key": "capslock", "command": "extension.vim_escape",
-        "when": "editorTextFocus &&  !inDebugRepl"
+        "when": "editorTextFocus && vim.active &&  !inDebugRepl"
         },
     { "key": "ctrl+shift+v",
         "command": "editor.action.smartSelect.grow",
