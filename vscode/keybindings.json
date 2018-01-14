@@ -1,4 +1,5 @@
 // Place your key bindings in this file to overwrite the defaults
+// https://code.visualstudio.com/docs/editor/codebasics
 // ~/.config/Code/User/
 // or File> Preferences> Keyboard Shortcuts
 [
@@ -7,8 +8,8 @@
     { "key": "ctrl+. x",        "command": "workbench.action.closeEditorsInGroup" },
     { "key": "ctrl+. space",    "command": "workbench.action.toggleEditorGroupLayout" },
     { "key": "ctrl+. o",        "command": "workbench.action.focusPreviousGroup" },
-    { "key": "ctrl+. shift+[",  "command": "workbench.action.moveActiveEditorGroupLeft" },
-    { "key": "ctrl+. shift+]",  "command": "workbench.action.moveActiveEditorGroupRight" },
+    { "key": "ctrl+. shift+[",  "command": "workbench.action.moveEditorToPreviousGroup" },
+    { "key": "ctrl+. shift+]",  "command": "workbench.action.moveEditorToNextGroup" },
     { "key": "ctrl+. c",        "command": "workbench.action.newWindow" },
     { "key": "ctrl+. shift+7",  "command": "workbench.action.closeWindow" },
     { "key": "ctrl+. shift+/",  "command": "workbench.action.openGlobalKeybindings" },
@@ -29,7 +30,9 @@
                             "when": "editorTextFocus && suggestWidgetVisible && !vim.useCtrlKeys" },
     // To ignore suggestion and esc key too far away
     { "key": "ctrl+e",  "command": "cursorEnd",
-                            "when": "editorTextFocus" },
+                            "when": "editorTextFocus && !suggestWidgetVisible" },
+    { "key": "ctrl+e",  "command": "hideSuggestWidget",
+                                "when": "editorTextFocus &&suggestWidgetVisible" },
     { "key": "ctrl+shift+g", "command": "editor.action.goToDeclaration",
                             "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor" },
     { "key": "ctrl+shift+r",  "command": "editor.action.rename",

@@ -201,5 +201,6 @@
         "statusBar.background": "#5f0000",
         "statusBar.noFolderBackground": "#5f0000",
         "statusBar.debuggingBackground": "#5f0000"
-    }
+    },
+    "window.zoomLevel": 0
 }

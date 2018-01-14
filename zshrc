@@ -202,7 +202,7 @@ fzf-locate() { xdg-open "$(locate "*" | fzf -e)" ;}; zle -N fzf-locate; bindkey 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # location of snippets
-snippets_dir=~/Documents/notes/snippets
+snippets_dir=~/Documents/notes
 
 # edit single line snippet
 cfg-snippetrc() { $EDITOR ~/.snippetrc ;}
